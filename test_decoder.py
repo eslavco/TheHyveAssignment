@@ -1,7 +1,7 @@
 import io
 import unittest
 
-from decoder import decode, trivial_encoding
+from decoder import decode, trivial_encoding, short_encoding
 
 
 class TestStringMethods(unittest.TestCase):
@@ -17,6 +17,12 @@ class TestStringMethods(unittest.TestCase):
         result = trivial_encoding([97, 97, 98, 97, 97, 98, 97, 97])
 
         self.assertEqual(result, b'\x00a\x00a\x00b\x00a\x00a\x00b\x00a\x00a')
+
+    def test_short_encoding(self):
+
+        self.assertEqual(short_encoding([97, 97, 98, 97, 97, 98, 97, 97]), [0, 97, 1, 1, 0, 98, 3, 3, 6, 2])
+        self.assertEqual(short_encoding([97, 97, 97, 97, 97, 97, 97]), [0, 97, 1, 1, 2, 2, 4, 3])
+
 
 
 if __name__ == '__main__':
