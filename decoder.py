@@ -71,7 +71,7 @@ def decode(byte_stream):
         except:
             # Append 3F byte instead that correspond to int 63
             result_bytestring.append(ERROR_BYTE)
-    return bytes(result_bytestring)
+    return result_bytestring
 
 
 def main():
