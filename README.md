@@ -2,7 +2,8 @@
 
 
 The program receives, on standard input, an encoded data stream. 
-The program should output 
+
+The program outputs: 
 * to standard output, the decoded binary data. If any invalid or incomplete
 pair is found, the byte 3F should be output in its place.
 
