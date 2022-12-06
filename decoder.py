@@ -1,7 +1,6 @@
 import os
 import sys
 
-
 #  3F in hex
 ERROR_BYTE = 63
 
@@ -86,7 +85,6 @@ def main():
     if ERROR_BYTE in result_bytestring:
         env_variable = os.environ.get('USE_TRIVIAL_IMPLEMENTATION')
 
-        short_encoding(result_bytestring)
         if not env_variable:
             # trivial encoding
             print(trivial_encoding(result_bytestring))
