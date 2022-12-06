@@ -10,7 +10,7 @@ def short_encoding(result_bytestring):
     short_result = []
     mapped_bytes = []
     for i in range(len(result_bytestring)):
-        b = result_bytestring[i:1]
+        b = result_bytestring[i]
         # first check if I mapped the byte already
         if not b in mapped_bytes:
             mapped_bytes.append(result_bytestring[i])
